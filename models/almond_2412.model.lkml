@@ -21,20 +21,6 @@ persist_with: almond_2412_default_datagroup
 
 # To see the Explore you’re building, navigate to the Explore menu and select an Explore under "Almond 2412"
 
-explore: billion_orders {
-  join: orders {
-    type: left_outer
-    sql_on: ${billion_orders.order_id} = ${orders.id} ;;
-    relationship: many_to_one
-  }
-
-  join: users {
-    type: left_outer
-    sql_on: ${orders.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-}
-
 # To create more sophisticated Explores that involve multiple views, you can use the join parameter.
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
@@ -43,21 +29,11 @@ explore: connection_reg_r3 {}
 
 explore: customer {}
 
-explore: day_of_week {}
-
 explore: dept {}
 
-explore: dummy {}
 
 explore: employees {}
 
-explore: events {
-  join: users {
-    type: left_outer
-    sql_on: ${events.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-}
 
 explore: fakeorders {
   join: orders {
@@ -72,8 +48,6 @@ explore: fakeorders {
     relationship: many_to_one
   }
 }
-
-explore: fatal_error_user_derived_base {}
 
 explore: flights {}
 
@@ -110,8 +84,6 @@ explore: hundred_million_orders_wide {
 }
 
 explore: incremental_pdts_test {}
-
-explore: ints {}
 
 explore: inventory_items {
   join: products {
@@ -157,41 +129,8 @@ explore: order_items {
   }
 }
 
-explore: order_items_vijaya {
-  join: orders {
-    type: left_outer
-    sql_on: ${order_items_vijaya.order_id} = ${orders.id} ;;
-    relationship: many_to_one
-  }
-
-  join: inventory_items {
-    type: left_outer
-    sql_on: ${order_items_vijaya.inventory_item_id} = ${inventory_items.id} ;;
-    relationship: many_to_one
-  }
-
-  join: users {
-    type: left_outer
-    sql_on: ${orders.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-
-  join: products {
-    type: left_outer
-    sql_on: ${inventory_items.product_id} = ${products.id} ;;
-    relationship: many_to_one
-  }
-}
-
-explore: order_status_vijaya {}
-
-explore: pegdates {}
 
 explore: person {}
-
-explore: persons {}
-
-explore: persons2 {}
 
 explore: products {}
 
@@ -203,31 +142,6 @@ explore: salary {
   }
 }
 
-explore: sample_data {}
-
-explore: sample_table {}
-
-explore: sandbox_scratch {}
-
-explore: saralooker {
-  join: users {
-    type: left_outer
-    sql_on: ${saralooker.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-}
-
-explore: schema_migrations {}
-
-explore: sindhu {
-  join: users {
-    type: left_outer
-    sql_on: ${sindhu.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-}
-
-explore: demo_db_temporary {}
 
 explore: ten_million_orders {
   join: orders {
@@ -243,13 +157,7 @@ explore: ten_million_orders {
   }
 }
 
-explore: test {}
 
-explore: testing_blob {}
-
-explore: testing_blob_type {}
-
-explore: test_space_in_column_name {}
 
 explore: users {}
 
@@ -260,41 +168,3 @@ explore: user_data {
     relationship: many_to_one
   }
 }
-
-explore: viet {}
-
-explore: vvimgsrc1onerroralert2ll {}
-
-explore: xin_test_for_bug2 {}
-
-explore: xss_test {}
-
-explore: xss_test_1 {}
-
-explore: xss_test_10 {}
-
-explore: xss_test_11 {}
-
-explore: xss_test_12 {}
-
-explore: xss_test_13 {}
-
-explore: xss_test_14 {}
-
-explore: xss_test_15 {}
-
-explore: xss_test_16 {}
-
-explore: xss_test_2 {}
-
-explore: xss_test_4 {}
-
-explore: xss_test_5 {}
-
-explore: xss_test_6 {}
-
-explore: xss_test_7 {}
-
-explore: xss_test_8 {}
-
-explore: xss_test_9 {}
