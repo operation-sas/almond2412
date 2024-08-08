@@ -159,7 +159,12 @@ explore: ten_million_orders {
 
 
 
-explore: users {}
+explore: users {
+  access_filter: {
+    field: users.state
+    user_attribute: training_sanat
+  }
+}
 
 explore: user_data {
   join: users {
